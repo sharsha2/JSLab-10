@@ -1,0 +1,37 @@
+{
+  "companyName": "Amazon",
+  "headOffice": "Ontario, Canada",
+  "established": 1994,
+  "active": true,
+  "products": [{
+      "name": "Bacon Scented Mustache",
+      "price": 4.07,
+      "details": "Now you can smell bacon all day in peace.",
+      "image": "bacon-scented-mustache.jpg"
+    },
+    {
+      "name": "Dill pickle lip balm",
+      "price": 11.95,
+      "details": "Take your look to the next level with this amazing & dill-icious lip balm",
+      "image": "dill-pickle-lip-balm.jpg"
+    },
+    {
+      "name": "Dancing with cats",
+      "price": 13.22,
+      "details": "Learn intrepetive dance with your feline friend!",
+      "image": "dancing-with-cats.jpg"
+    },
+    {
+      "name": "A desktop refrigerator",
+      "price": 38.00,
+      "details": "You can have a single refrigerated beverage at your fingertips.",
+      "image": "510g-cwJNBL.jpg"
+    },
+    {
+      "name": "A home mushroom farm",
+      "price": 22.85,
+      "details": "Now you can grow your own fungus right at home.",
+      "image": "81WCBll2QvL._SL1500_.jpg"
+    }
+  ]
+}

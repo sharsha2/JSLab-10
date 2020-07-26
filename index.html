@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Lab-8 json</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfPAEIY-M_guCExS_Ad3NXty2ijK3ip6M&callback=initMap">
+	</script>
+	<script src="thirdpartyapi.js" defer></script>
+
+</head>
+
+<body>
+
+	<header>
+
+	</header>
+
+	<section>
+
+	</section>
+
+	<footer>
+
+	</footer>
+
+	<script>
+		let header = document.querySelector('header');
+		let section = document.querySelector('section');
+		//git link for validating json. and validated json file through json lint website.
+		let URL = 'https://sharsha2.github.io/Lab-8-json/products.json';
+
+
+		function access_information(URL, addProducts) {
+			let request = new XMLHttpRequest();
+
+			request.open('GET', URL);
+			request.responseType = 'json';
+			request.send();
+
+			request.onload = function () {
+				let jsonObj = request.response;
+				addProducts(jsonObj);
+			}
+		}
+
+
+		//function for json application for retriving all the data and using them from products.json file.
+		function addProducts(jsonObj) {
+
+			let h1 = document.createElement('h1');
+			h1.textContent = jsonObj['companyName'];
+			header.appendChild(h1);
+			let para = document.createElement('p');
+			para.textContent = jsonObj['headOffice'];
+			header.appendChild(para);
+
+			let products = jsonObj['products'];
+			for (let i = 0; i < products.length; i++) {
+				let article = document.createElement('article');
+				let h2 = document.createElement('h2');
+				let img = document.createElement('img');
+				let p = document.createElement('p');
+				let h6 = document.createElement('h6');
+
+				img.setAttribute('src', 'images/' + products[i].image);
+				img.setAttribute('alt', products[i].name);
+
+				h2.textContent = products[i].name;
+				p.textContent = products[i].details;
+				h6.textContent = 'Price : $ ' + products[i].price;
+
+
+				article.appendChild(h2);
+				article.appendChild(img);
+				article.appendChild(p);
+				article.appendChild(h6);
+				section.appendChild(article);
+			}
+		}
+
+		access_information(URL, addProducts);
+	</script>
+
+	<!-- setting up a section for third party api using map -->
+	<section class="row">
+		<h2>Searching Location............Google Maps</h2>
+		<p id="location"></p>
+		<div id="map"></div>
+	</section>
+
+
+
+</body>
+
+</html>
